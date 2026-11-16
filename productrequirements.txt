@@ -1,0 +1,339 @@
+Product concept: Goethe A1 Exam Readiness Checker
+I would position this as an A1 Exam Readiness Assessment rather than another German-language learning application.
+
+The learner has already completed A1 training. The purpose of this application is to help them answer one important question:
+
+"I have completed my A1 German course. Am I ready to book the Goethe A1 examination, and what should I practise before taking it?"
+
+The application should conduct a short diagnostic assessment, identify strengths and weaknesses, estimate examination readiness, and recommend the next 2–3 learning activities.
+
+One important product decision: the assessment should distinguish between language knowledge and exam readiness. A learner may know vocabulary and grammar but still struggle with listening, writing or speaking under examination conditions.
+1. Product overview
+MVP product concept
+A1 Ready?
+Your Goethe A1 exam readiness companion
+
+
+
+
+
+
+
+
+goethe.de
+
+
+Find out where you stand before booking your Goethe A1 exam.
+10–15
+Assessment questions
+5–8 min
+Target assessment time
+3 skills
+Diagnostic categories
+3 actions
+Personalised practice priorities
+
+
+2. Target learner and problem statement
+Target audience
+- Learners who have completed German A1 training.
+- Learners preparing for Goethe-Zertifikat A1 (Start Deutsch 1).
+- Learners who want to evaluate their knowledge before paying for an examination.
+- Self-learners who need direction on what to revise.
+Problem statement
+
+After completing an A1 course, learners often lack an objective understanding of their readiness for the Goethe examination. They may know basic German but struggle to identify gaps in vocabulary, grammar and reading comprehension.
+
+They need a quick diagnostic tool that translates their current knowledge into an understandable readiness assessment and actionable practice recommendations.
+3. User journey
+1. Welcome screen
+   
+   Learner confirms that they have completed A1 training and starts the assessment.
+2. Diagnostic assessment
+   
+   Answer 10–15 questions covering vocabulary, grammar and reading.
+3. Scoring engine
+   
+   Calculate accuracy by skill, identify weak areas and evaluate performance.
+4. Readiness dashboard
+   
+   Show an overall diagnostic score and individual skill scores.
+5. Personalised action plan
+   
+   Recommend the top 2–3 areas to practise, with exercises.
+6. Reassessment
+   
+   Learner completes another short assessment to track improvement.
+
+4. Assessment design – 15 questions
+I recommend 15 questions, divided equally across the three diagnostic areas.
+Assessment blueprint
+5
+Vocabulary
+Word meanings and everyday usage
+5
+Grammar
+Sentence construction and grammar
+5
+Reading
+Understanding short texts
+
+
+Parameter	Proposed design
+Total questions	15
+Duration	8–12 minutes
+Question format	Multiple choice
+Answer options	3–4
+Scoring	1 mark per correct answer
+Total score	15
+Negative marking	None
+Retake	Allowed
+
+
+A. Vocabulary – 5 questions
+Test common A1 vocabulary, everyday situations, numbers, time, food, family and occupations.
+#	Question	Options	Answer
+1	Ich ___ aus Indien.	komme / gehe / mache	komme
+2	What is the opposite of teuer?	billig / groß / schön	billig
+3	What is Mittwoch in English?	Monday / Wednesday / Friday	Wednesday
+4	Das ist ___ Apfel.	eine / ein / einen	ein
+5	Wir trinken ___ Kaffee.	einen / eine / ein	einen
+
+B. Grammar – 5 questions
+Test basic grammar rules:
+- Personal pronouns
+- Verb conjugation
+- Articles (der, die, das)
+- Present tense
+- Prepositions
+#	Question	Options	Answer
+6	Ich ___ 30 Jahre alt.	bin / bist / ist	bin
+7	Er ___ in Dubai.	wohnen / wohnt / wohnst	wohnt
+8	Wir ___ heute Deutsch.	lerne / lernen / lernt	lernen
+9	Das ist Maria. ___ Bruder heißt Ali.	Sein / Ihr / Seine	Ihr
+10	Ich gehe ___ Schule.	zur / im / aus	zur
+
+C. Reading – 5 questions
+Present one short passage and ask five comprehension questions.
+Lesen – Read the passage
+
+TEXT: EIN TAG IM LEBEN VON LUKAS
+
+Hallo! Ich heiße Lukas. Ich wohne in Berlin. Ich arbeite von Montag bis Freitag in einem Café. Am Samstag spiele ich Fußball. Am Sonntag besuche ich meine Eltern. Ich stehe jeden Tag um 7 Uhr auf.
+
+Answer the questions
+
+11. Wo wohnt Lukas?
+- A. München
+- B. Berlin
+- C. Hamburg
+12. Wo arbeitet Lukas?
+- A. In einem Café
+- B. In einer Schule
+- C. In einem Büro
+13. Wann spielt Lukas Fußball?
+- A. Montag
+- B. Freitag
+- C. Samstag
+14. Wen besucht Lukas am Sonntag?
+- A. Seine Freunde
+- B. Seine Eltern
+- C. Seine Kollegen
+15. Wann steht Lukas auf?
+- A. Um 6 Uhr
+- B. Um 7 Uhr
+- C. Um 8 Uhr
+
+Answer key: 11-B, 12-A, 13-C, 14-B, 15-B.
+
+5. Scoring engine – how should the application calculate readiness?
+This is the most important product decision.
+
+I would avoid displaying only one overall score. The learner needs to understand exactly where they are performing well and where they need improvement.
+Proposed scoring model
+Each question carries one mark.
+\[
+\text{Skill Score}=\frac{\text{Correct Answers}}{5}\times100
+\]
+
+\[
+\text{Overall Score}=\frac{V+G+R}{3}
+\]
+
+Where:
+- V = Vocabulary score
+- G = Grammar score
+- R = Reading score
+For example, imagine a learner receives:
+Skill	Correct	Score
+Vocabulary	4/5	80%
+Grammar	2/5	40%
+Reading	5/5	100%
+Overall	11/15	73.3%
+
+Example learner readiness dashboard
+73%
+A1 knowledge readiness
+Needs targeted practice
+
+
+
+
+Skill-wise performance
+Vocabulary
+
+80%
+
+
+
+
+Grammar
+
+40%
+
+
+
+
+Reading
+
+100%
+
+
+
+
+
+Your assessment
+- Strong
+   Reading comprehension
+- Good
+   Vocabulary
+- Needs practice
+   Grammar
+
+Suggested readiness bands
+These are proposed product thresholds, not official Goethe grading categories.
+Score	App interpretation	Recommendation
+85–100%	Strong foundation	Complete full mock exam
+70–84%	Nearly ready in assessed skills	Practise identified gaps
+50–69%	Developing	Focused revision required
+Below 50%	More preparation needed	Revisit A1 fundamentals
+
+Important product safeguard: A 73% score on these 15 questions must not be presented as a 73% chance of passing Goethe A1. The assessment does not measure the official listening, writing or speaking modules. Call it a preliminary knowledge-readiness score and show those three examination skills as not yet assessed.
+6. Personalised recommendations engine
+This is where your product creates value beyond an ordinary quiz.
+
+The system should not simply say "You scored 40% in grammar."
+
+It should explain:
+1. What the learner got wrong.
+2. What concept they need to revise.
+3. What exercise they should complete.
+4. How they can verify improvement.
+For our example learner:
+Your personalised practice plan
+3 recommended actions
+1
+Revise German verb conjugation
+
+You struggled with the correct verb forms for ich, er and wir.
+
+Practice: sein, haben, wohnen, lernen and kommen.
+
+Suggested duration: 15 minutes
+
+
+
+2
+Practise German articles
+
+Revise der, die, das and ein, eine, einen.
+
+Practice: Complete 10 sentences using the correct article.
+
+Suggested duration: 10 minutes
+
+
+
+3
+Practise everyday sentence construction
+
+Form sentences using personal pronouns and common verbs.
+
+Practice: Write five sentences about your daily routine.
+
+Suggested duration: 10 minutes
+
+
+
+Next step
+
+Complete a short grammar reassessment and then attempt a full Goethe A1 mock examination.
+
+The recommendation engine can initially be rule-based rather than AI-based.
+
+For example:
+Question tag	If incorrect, recommend
+vocabulary.food	Food and drink vocabulary
+vocabulary.time	Days, months and time
+grammar.verbs	Verb conjugation
+grammar.articles	Definite and indefinite articles
+grammar.pronouns	Personal pronouns
+reading.main_idea	Understanding the main idea
+reading.details	Finding specific information
+
+This makes the MVP predictable, testable and inexpensive to build.
+7. Functional requirements for the MVP
+As a Product Manager, I would break the application into these functional components.
+ID	Feature	Functional requirement	Priority
+FR01	Learner onboarding	Start assessment after confirming A1 training completion	P0
+FR02	Question bank	Provide 15 A1-level questions	P0
+FR03	Assessment engine	Display questions and capture answers	P0
+FR04	Scoring engine	Calculate overall and skill-wise scores	P0
+FR05	Readiness dashboard	Display readiness bands and skill gaps	P0
+FR06	Recommendation engine	Generate top 2–3 practice recommendations	P0
+FR07	Learning exercises	Provide targeted exercises for weak topics	P1
+FR08	Reassessment	Allow learners to retake the assessment	P1
+FR09	Progress tracking	Compare previous and latest scores	P1
+FR10	Listening/speaking assessment	Extend diagnostic coverage to all Goethe skills	P2
+
+Important assessment design correction
+Keep the three categories mutually exclusive:
+- Vocabulary: word meanings, everyday expressions, food, time, places and occupations.
+- Grammar: articles, verb conjugation, pronouns, sentence structure and prepositions.
+- Reading: comprehension, identifying details and understanding short messages.
+For example, questions such as Ich bin 30 Jahre alt belong under grammar, not vocabulary.
+8. Technical approach – how I would build it
+I would avoid introducing complex AI agents in the first version. The initial product can be built using a straightforward assessment engine and deterministic scoring logic.
+Proposed architecture
+Frontend – React
+Onboarding, quiz, results dashboard and exercises
+
+Backend – Python / FastAPI
+Assessment API, answer validation, scoring and recommendations
+
+PostgreSQL
+Questions, answers, attempts and learner results
+Rules engine
+Skill analysis and personalised recommendations
+
+ID	Requirement	Priority
+FR11	Rule-based deterministic scoring	P0
+FR12	Skill-specific readiness thresholds	P0
+FR13	Question bank with tagged questions	P0
+FR14	Randomised question selection	P0
+FR15	Avoid unnecessary question repetition	P0
+FR16	Maintain equivalent difficulty between attempts	P0
+FR17	Store attempt history	P1
+FR18	Compare performance across attempts	P1
+FR19	AI-powered answer explanations	P2
+FR20	Full four-skill Goethe mock examination	P2
+
+Rule-based scoring engine
+
+Deterministic
+
+- Check answers against the answer key.
+- Calculate vocabulary, grammar and reading scores.
+- Apply readiness thresholds.
+- Identify weak topics.
+- Select recommendations using predefined rules.
