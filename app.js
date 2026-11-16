@@ -22,6 +22,27 @@ const questions = [
   question("Reading", "Uhrzeiten und Alltag", "Wann steht Lukas auf?", ["Um 6 Uhr", "Um 7 Uhr", "Um 8 Uhr"], 1, "reading.time", "Uhrzeiten in kurzen Texten", "Übe Uhrzeiten und verbinde sie mit den passenden Verben für den Alltag.", "Lies einen kurzen Tagesplan und schreibe die Uhrzeit zu jeder Aktivität auf.", 10, "Prüfe, ob du jede Uhrzeit laut sagen und der richtigen Aktivität zuordnen kannst.", "Im Text steht: „Ich stehe jeden Tag um 7 Uhr auf.“", readingPassage)
 ];
 
+const secondReadingPassage = "Hallo! Ich heiße Anna. Ich wohne in Köln. Ich arbeite von Montag bis Freitag in einem Hotel. Am Freitag treffe ich Freunde. Am Sonntag koche ich mit meiner Familie. Ich stehe jeden Tag um 6 Uhr auf.";
+
+const secondQuestionSet = [
+  question("Vocabulary", "Alltagsausdrücke", "Was sagt man im Café, wenn man Tee bestellen möchte?", ["Ich hätte gern einen Tee, bitte.", "Ich bestelle keinen Tee.", "Wo ist mein Tee?"], 0, "vocabulary.requests", "Bitten und bestellen", "Übe wichtige Sätze zum Bestellen: „Ich hätte gern …“, „Bitte“ und „Danke“.", "Schreibe drei Bestellungen für ein Café und sprich sie laut aus.", 10, "Prüfe, ob jede Bestellung ein Getränk nennt und „gern“ richtig verwendet.", "„Ich hätte gern …“ ist eine höfliche Bitte. Damit kannst du im Café ein Getränk bestellen."),
+  question("Vocabulary", "Wortbedeutungen", "Was ist ein Gegenteil von „teuer“?", ["günstig", "lang", "früh"], 0, "vocabulary.words", "Wörter und Gegenteile", "Wiederhole häufige Gegenteile: teuer/billig, groß/klein und alt/neu.", "Schreibe fünf Wortpaare mit Gegenteilen auf und bilde kurze Sätze damit.", 10, "Decke eine Seite der Wortpaare ab und nenne das passende Gegenteil.", "„Günstig“ bedeutet nicht teuer. „Lang“ und „früh“ sind keine Gegenteile von „teuer“."),
+  question("Vocabulary", "Wochentage und Uhrzeit", "Welcher Tag kommt nach Dienstag?", ["Mittwoch", "Freitag", "Montag"], 0, "vocabulary.time", "Wochentage und Uhrzeit", "Wiederhole die Wochentage und wichtige Zeitangaben.", "Sage die sieben Wochentage der Reihe nach und plane drei Aktivitäten mit „am …“.", 10, "Prüfe, ob du jeden Wochentag ohne deine Notizen nennen kannst.", "Auf Dienstag folgt Mittwoch. Danach kommt Donnerstag."),
+  question("Vocabulary", "Essen und Trinken", "Welches Wort ist ein Getränk?", ["Wasser", "Brot", "Käse"], 0, "vocabulary.food", "Essen und Trinken", "Wiederhole Wörter für Essen und Getränke und übe sie mit passenden Verben.", "Schreibe fünf Getränke auf und bilde mit jedem Getränk einen Satz mit „trinken“.", 10, "Prüfe, ob jedes Wort ein Getränk ist und in einen Satz mit „trinken“ passt.", "Wasser kann man trinken. Brot und Käse sind Lebensmittel, die man isst."),
+  question("Vocabulary", "Orte in der Stadt", "Wo kauft man Medikamente?", ["In der Apotheke", "Am Bahnhof", "Im Restaurant"], 0, "vocabulary.places", "Orte in der Stadt", "Wiederhole wichtige Orte: der Bahnhof, die Apotheke, der Supermarkt und das Hotel.", "Zeichne einen kleinen Stadtplan und beschrifte fünf Orte auf Deutsch.", 10, "Decke die Wörter ab und benenne jeden Ort aus dem Gedächtnis.", "Medikamente kauft man in der Apotheke. Am Bahnhof fahren Züge, und im Restaurant kann man essen."),
+  question("Grammar", "Verbkonjugation", "Ergänze den Satz: „Du ___ in Köln.“", ["wohnst", "wohnen", "wohnt"], 0, "grammar.verbs", "Verben im Präsens", "Wiederhole die Formen von „sein“ und die Präsensendungen für ich, er/sie und wir.", "Schreibe je einen Satz mit „ich bin“, „er ist“ und „wir sind“. Übe danach „wohnen“ und „lernen“.", 15, "Prüfe, ob die Verbform in jedem Satz zum Subjekt passt.", "Bei „du“ endet das regelmäßige Verb „wohnen“ auf „-st“: „Du wohnst“."),
+  question("Grammar", "Verbkonjugation", "Ergänze den Satz: „Wir ___ heute Kaffee.“", ["trinken", "trinkt", "trinkst"], 0, "grammar.verbs", "Verben im Präsens", "Wiederhole die Formen von „sein“ und die Präsensendungen für ich, er/sie und wir.", "Schreibe je einen Satz mit „ich bin“, „er ist“ und „wir sind“. Übe danach „wohnen“ und „lernen“.", 15, "Prüfe, ob die Verbform in jedem Satz zum Subjekt passt.", "Bei „wir“ hat das Verb im Präsens die Endung „-en“: „Wir trinken“."),
+  question("Grammar", "Possessivartikel", "Das ist Paul. ___ Schwester heißt Mia.", ["Seine", "Ihr", "Sein"], 0, "grammar.pronouns", "Pronomen und Possessivartikel", "Wiederhole Personalpronomen und Possessivartikel. Achte darauf, auf welche Person sich das Wort bezieht.", "Ergänze fünf kurze Sätze mit „mein“, „dein“, „sein“, „ihr“ und „unser“.", 10, "Prüfe, ob der Possessivartikel zur Person und zum Nomen passt.", "Paul ist ein Mann, deshalb heißt es „seine Schwester“. Das Wort richtet sich auch nach dem femininen Nomen „Schwester“."),
+  question("Grammar", "Artikel", "Ergänze den Satz: „Ich habe ___ Tasche.“", ["eine", "ein", "einen"], 0, "grammar.articles", "Artikel", "Wiederhole „der“, „die“ und „das“ sowie „ein“ und „eine“ in einfachen Sätzen.", "Schreibe zehn bekannte Nomen mit Artikel auf und ergänze fünf Lückensätze.", 10, "Prüfe den Artikel jedes Nomens und lies deine Sätze laut vor.", "„Tasche“ ist feminin: „die Tasche“. Deshalb heißt es hier „eine Tasche“."),
+  question("Grammar", "Präpositionen", "Ergänze den Satz: „Ich fahre ___ dem Bus.“", ["mit", "zur", "aus"], 0, "grammar.prepositions", "Präpositionen für Orte", "Wiederhole Ortsangaben wie „zur Schule“, „im Supermarkt“ und „aus der Stadt“.", "Bilde fünf kurze Sätze über Orte, zu denen du gehst, und benutze passende Präpositionen.", 10, "Vergleiche deine Ortsangaben mit A1-Beispielen und prüfe den Artikel.", "Man fährt „mit dem Bus“. Die Präposition „mit“ steht hier mit „dem Bus“."),
+  question("Reading", "Wichtige Informationen finden", "Wo wohnt Anna?", ["In Köln", "In Berlin", "In Hamburg"], 0, "reading.details", "Wichtige Informationen finden", "Suche nach Namen, Orten, Wochentagen und Uhrzeiten. Finde dann die passende Information im Text.", "Lies einen kurzen A1-Text und markiere Orte, Wochentage und Uhrzeiten.", 10, "Zeige den Satz im Text, der deine Antwort bestätigt.", "Im Text steht: „Ich wohne in Köln.“ Deshalb wohnt Anna in Köln.", secondReadingPassage),
+  question("Reading", "Wichtige Informationen finden", "Wo arbeitet Anna?", ["In einem Hotel", "In einer Schule", "In einem Büro"], 0, "reading.details", "Wichtige Informationen finden", "Suche nach Namen, Orten, Wochentagen und Uhrzeiten. Finde dann die passende Information im Text.", "Lies einen kurzen A1-Text und markiere Orte, Wochentage und Uhrzeiten.", 10, "Zeige den Satz im Text, der deine Antwort bestätigt.", "Im Text steht: „Ich arbeite … in einem Hotel.“", secondReadingPassage),
+  question("Reading", "Wochentage und Alltag", "Wann trifft Anna ihre Freunde?", ["Am Montag", "Am Freitag", "Am Samstag"], 1, "reading.sequence", "Wochentage und Alltag", "Achte auf Wörter wie „am Freitag“ und verbinde sie mit der passenden Aktivität.", "Lies einen kurzen Wochenplan und notiere die Aktivitäten für jeden Tag.", 10, "Prüfe, ob jede Aktivität zum richtigen Wochentag gehört.", "Im Text steht: „Am Freitag treffe ich Freunde.“", secondReadingPassage),
+  question("Reading", "Wichtige Informationen finden", "Mit wem kocht Anna am Sonntag?", ["Mit ihrer Familie", "Mit ihren Freunden", "Mit ihren Kollegen"], 0, "reading.details", "Wichtige Informationen finden", "Suche nach Namen, Orten, Wochentagen und Uhrzeiten. Finde dann die passende Information im Text.", "Lies einen kurzen A1-Text und markiere Orte, Wochentage und Uhrzeiten.", 10, "Zeige den Satz im Text, der deine Antwort bestätigt.", "Im Text steht: „Am Sonntag koche ich mit meiner Familie.“", secondReadingPassage),
+  question("Reading", "Uhrzeiten und Alltag", "Wann steht Anna auf?", ["Um 6 Uhr", "Um 7 Uhr", "Um 8 Uhr"], 0, "reading.time", "Uhrzeiten in kurzen Texten", "Übe Uhrzeiten und verbinde sie mit den passenden Verben für den Alltag.", "Lies einen kurzen Tagesplan und schreibe die Uhrzeit zu jeder Aktivität auf.", 10, "Prüfe, ob du jede Uhrzeit laut sagen und der richtigen Aktivität zuordnen kannst.", "Im Text steht: „Ich stehe jeden Tag um 6 Uhr auf.“", secondReadingPassage)
+];
+
+const questionSets = [questions, secondQuestionSet];
 const skillOrder = ["Vocabulary", "Grammar", "Reading"];
 const skillLabels = { Vocabulary: "Wortschatz", Grammar: "Grammatik", Reading: "Lesen" };
 const nextSteps = [
@@ -53,7 +74,9 @@ const nextSteps = [
 
 const app = document.querySelector("#app");
 let current = 0;
-let answers = Array(questions.length).fill(null);
+let activeSetIndex = 0;
+let activeQuestions = questionSets[activeSetIndex];
+let answers = Array(activeQuestions.length).fill(null);
 
 function renderIntro() {
   app.innerHTML = `
@@ -64,7 +87,7 @@ function renderIntro() {
         <p class="intro-description">Finished your A1 course? Take this friendly check to see where your German is feeling strong — and what to practise before you book your Goethe exam. One confident step closer to Germany starts here.</p>
         <div class="intro-meta">
           <span><span class="meta-icon" aria-hidden="true">◷</span> About 8 minutes</span>
-          <span><span class="meta-icon" aria-hidden="true">◎</span> 15 quick questions</span>
+          <span><span class="meta-icon" aria-hidden="true">◎</span> 15 quick questions · 2 versions</span>
           <span><span class="meta-icon" aria-hidden="true">↗</span> No sign-up needed</span>
         </div>
         <label class="training-confirmation"><input id="training-complete" type="checkbox"><span>I have completed an A1 German course.</span></label>
@@ -91,14 +114,14 @@ function renderIntro() {
   trainingComplete.addEventListener("change", () => { startButton.disabled = !trainingComplete.checked; });
   startButton.addEventListener("click", () => {
     current = 0;
-    answers = Array(questions.length).fill(null);
+    answers = Array(activeQuestions.length).fill(null);
     renderQuestion();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
 function renderQuestion() {
-  const item = questions[current];
+  const item = activeQuestions[current];
   const selected = answers[current];
   const passage = item.passage
     ? `<div class="reading-passage" lang="de">${item.passage}</div>`
@@ -109,8 +132,8 @@ function renderQuestion() {
     </button>`).join("");
   app.innerHTML = `
     <section class="quiz" aria-labelledby="question-title">
-      <div class="quiz-header"><span class="quiz-skill">${skillLabels[item.skill]} · ${item.topic}</span><span class="quiz-count">Frage ${current + 1} von ${questions.length}</span></div>
-      <div class="progress-track" role="progressbar" aria-label="Fortschritt im Quiz" aria-valuemin="0" aria-valuemax="${questions.length}" aria-valuenow="${current + 1}"><div class="progress-fill" style="width:${((current + 1) / questions.length) * 100}%"></div></div>
+      <div class="quiz-header"><span class="quiz-skill">${skillLabels[item.skill]} · ${item.topic}</span><span class="quiz-count">Frage ${current + 1} von ${activeQuestions.length} · Satz ${activeSetIndex + 1}</span></div>
+      <div class="progress-track" role="progressbar" aria-label="Fortschritt im Quiz" aria-valuemin="0" aria-valuemax="${activeQuestions.length}" aria-valuenow="${current + 1}"><div class="progress-fill" style="width:${((current + 1) / activeQuestions.length) * 100}%"></div></div>
       <div class="quiz-card">
         <div class="question-type">${item.passage ? "Lies den Text und wähle die richtige Antwort." : "Wähle die richtige Antwort."}</div>
         ${passage}
@@ -118,7 +141,7 @@ function renderQuestion() {
         <div class="answer-list" role="group" aria-label="Antwortmöglichkeiten">${options}</div>
         <div class="quiz-actions">
           <button class="back-button" id="previous-question" type="button" ${current === 0 ? "disabled" : ""}>← &nbsp;Zurück</button>
-          <button class="primary-button" id="next-question" type="button" ${selected === null ? "disabled" : ""}>${current === questions.length - 1 ? "Ergebnis ansehen" : "Weiter"} &nbsp;→</button>
+          <button class="primary-button" id="next-question" type="button" ${selected === null ? "disabled" : ""}>${current === activeQuestions.length - 1 ? "Ergebnis ansehen" : "Weiter"} &nbsp;→</button>
         </div>
       </div>
       <p class="keyboard-note">Deine Antworten bleiben auf diesem Gerät und werden nicht gespeichert oder geteilt.</p>
@@ -135,7 +158,7 @@ function renderQuestion() {
   });
   document.querySelector("#next-question").addEventListener("click", () => {
     if (answers[current] === null) return;
-    if (current < questions.length - 1) { current += 1; renderQuestion(); }
+    if (current < activeQuestions.length - 1) { current += 1; renderQuestion(); }
     else renderResults();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
@@ -143,12 +166,12 @@ function renderQuestion() {
 
 function getResults() {
   const results = Object.fromEntries(skillOrder.map((skill) => {
-    const indexes = questions.map((item, index) => item.skill === skill ? index : -1).filter((index) => index >= 0);
-    const correct = indexes.filter((index) => answers[index] === questions[index].answer).length;
+    const indexes = activeQuestions.map((item, index) => item.skill === skill ? index : -1).filter((index) => index >= 0);
+    const correct = indexes.filter((index) => answers[index] === activeQuestions[index].answer).length;
     return [skill, { correct, total: indexes.length, percent: Math.round(correct / indexes.length * 100) }];
   }));
-  const correct = questions.reduce((total, item, index) => total + (answers[index] === item.answer ? 1 : 0), 0);
-  return { results, correct, percent: Math.round(correct / questions.length * 100) };
+  const correct = activeQuestions.reduce((total, item, index) => total + (answers[index] === item.answer ? 1 : 0), 0);
+  return { results, correct, percent: Math.round(correct / activeQuestions.length * 100) };
 }
 
 function renderResults() {
@@ -167,7 +190,7 @@ function renderResults() {
       <div class="skill-card-foot"><span>${results[skill].correct} von ${results[skill].total} richtig</span><span>${results[skill].percent >= 75 ? "Stark" : results[skill].percent >= 50 ? "Im Aufbau" : "Weiter üben"}</span></div>
     </article>`).join("");
   const missedTopics = new Map();
-  questions.forEach((item, index) => {
+  activeQuestions.forEach((item, index) => {
     if (answers[index] === item.answer) return;
     const existing = missedTopics.get(item.tag);
     if (existing) existing.missed += 1;
@@ -190,7 +213,7 @@ function renderResults() {
         <p class="practice-verify"><strong>So prüfst du dich:</strong> ${item.verify}</p>
       </div>
     </article>`).join("");
-  const answerKey = questions.map((item, index) => {
+  const answerKey = activeQuestions.map((item, index) => {
     const isCorrect = answers[index] === item.answer;
     const selected = answers[index] === null ? "Keine Antwort" : item.options[answers[index]];
     return `
@@ -209,9 +232,9 @@ function renderResults() {
   }).join("");
   app.innerHTML = `
     <section class="results" aria-labelledby="results-title">
-      <div class="results-top"><div><div class="eyebrow">Dein A1-Check</div><h1 id="results-title">Dein Ergebnis.</h1><p class="results-subtitle">Du hast <strong>${correct} von ${questions.length}</strong> Fragen richtig beantwortet. Hier siehst du deine Ergebnisse.</p></div><button class="restart-button" id="restart-quiz" type="button">↻ &nbsp;Neu starten</button></div>
+      <div class="results-top"><div><div class="eyebrow">Dein A1-Check · Satz ${activeSetIndex + 1}</div><h1 id="results-title">Dein Ergebnis.</h1><p class="results-subtitle">Du hast <strong>${correct} von ${activeQuestions.length}</strong> Fragen richtig beantwortet. Hier siehst du deine Ergebnisse.</p></div><button class="restart-button" id="restart-quiz" type="button">↻ &nbsp;Anderen Satz starten</button></div>
       <div class="score-overview">
-        <div class="score-total"><div class="score-ring" style="--score:${percent * 3.6}deg"><div class="score-ring-inner"><span class="score-number">${percent}%</span><span class="score-out-of">Wissensstand</span></div></div><span class="score-total-label">${correct} / ${questions.length} richtig</span></div>
+        <div class="score-total"><div class="score-ring" style="--score:${percent * 3.6}deg"><div class="score-ring-inner"><span class="score-number">${percent}%</span><span class="score-out-of">Wissensstand</span></div></div><span class="score-total-label">${correct} / ${activeQuestions.length} richtig</span></div>
         <div class="readiness-result"><span class="readiness-label"><span aria-hidden="true">✳</span> ${status.label}</span><h2>${status.title}</h2><p>${status.text}</p></div>
       </div>
       <div class="section-heading"><h2>Deine Fähigkeiten</h2><span>Jeder Bereich einzeln bewertet · je 5 Fragen</span></div>
@@ -229,7 +252,9 @@ function renderResults() {
     </section>`;
   document.querySelector("#restart-quiz").addEventListener("click", () => {
     current = 0;
-    answers = Array(questions.length).fill(null);
+    activeSetIndex = (activeSetIndex + 1) % questionSets.length;
+    activeQuestions = questionSets[activeSetIndex];
+    answers = Array(activeQuestions.length).fill(null);
     renderIntro();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });

@@ -71,16 +71,17 @@ SprachFit addresses this need with a brief diagnostic, a score for each assessed
 ### MVP scope
 
 - A welcome screen with confirmation that the learner has completed A1 training.
-- A 15-question multiple-choice diagnostic:
+- Two equivalent 15-question forms for the multiple-choice diagnostic:
   - 5 vocabulary questions.
   - 5 grammar questions.
   - 5 reading-comprehension questions based on one shared short passage.
+- Alternate between the two forms when the learner starts another attempt in the same page session.
 - One point for each correct answer; no negative marking.
 - Overall and per-skill scores.
 - Informal readiness bands and explanations.
 - A personalized plan of two or three study actions.
 - An answer review with the correct option, the learner's choice, and a short explanation for each question.
-- Retake the same assessment.
+- Retake the assessment using the alternate question set.
 - Explicitly identify listening, writing, and speaking as not assessed.
 
 ### Out of scope for the MVP
@@ -101,18 +102,22 @@ SprachFit addresses this need with a brief diagnostic, a score for each assessed
 4. **View results:** The learner sees the overall score, readiness band, and scores for vocabulary, grammar, and reading.
 5. **Plan practice:** The learner receives the top two or three relevant learning activities, with an exercise, suggested duration, and a way to check their work.
 6. **Review answers:** The learner can inspect their answer, the correct answer, and its explanation for every question.
-7. **Retake or revise:** The learner can restart the assessment or change answers by revisiting the quiz.
+7. **Retake or revise:** The learner can start the alternate question set or change answers by revisiting the quiz.
+
+The two-set alternation is held in page memory. Reloading the page starts again with Set 1; attempt history and cross-session set rotation are out of MVP scope.
 
 ## 8. Assessment design
 
 ### Assessment blueprint
 
-| Skill | Question count | Coverage |
+| Skill | Questions per set | Coverage |
 |---|---:|---|
 | Vocabulary | 5 | Everyday expressions, word meanings, days and time, food and drink, places |
 | Grammar | 5 | Verb conjugation, possessive articles, noun articles, prepositions |
 | Reading | 5 | Finding details, days and routine, times; questions share one short passage |
-| **Total** | **15** | **Three assessed skills** |
+| **Total per set** | **15** | **Three assessed skills** |
+
+The MVP contains **two fixed forms (30 questions total)** with five questions per skill in each form. The forms use the same skill and topic-tag blueprint, and each reading form uses one shared passage for its five questions. The second form is intended to be comparable in difficulty, but has not been empirically calibrated. Questions retain their authored order; starting another attempt alternates forms only within the current page session.
 
 Question categories must be mutually exclusive:
 
@@ -214,21 +219,21 @@ Priority definitions: **P0** = required for the MVP; **P1** = planned enhancemen
 | ID | Requirement | Priority | Acceptance criteria | MVP status |
 |---|---|---:|---|---|
 | FR01 | Learner onboarding | P0 | A learner must confirm A1 training completion before the assessment can start. | Implemented |
-| FR02 | Question bank | P0 | Present 15 A1-level questions: 5 vocabulary, 5 grammar, and 5 reading. | Implemented |
+| FR02 | Question bank | P0 | Provide two 15-question A1-level forms, each with 5 vocabulary, 5 grammar, and 5 reading questions. | Implemented |
 | FR03 | Assessment engine | P0 | Show one question at a time; capture a single choice; prevent advancing without a choice; allow navigation to previous questions. | Implemented |
 | FR04 | Scoring engine | P0 | Score one point per correct answer; apply no negative marking; compute overall and per-skill scores deterministically. | Implemented |
 | FR05 | Readiness dashboard | P0 | Show the overall score, overall band, skill scores, and the unassessed exam modules. | Implemented |
 | FR06 | Recommendation engine | P0 | Select no more than three recommendations using the deterministic rules in §10. | Implemented |
 | FR07 | Learning exercises | P1 | Each recommendation includes a concrete exercise, suggested duration, and a way to verify improvement. | Implemented |
-| FR08 | Reassessment | P1 | Allow the learner to start a fresh attempt. | Implemented; same question set |
+| FR08 | Reassessment | P1 | Allow the learner to start a fresh attempt using the alternate form. | Implemented; alternates in the current page session |
 | FR09 | Progress tracking | P1 | Store and compare a learner's previous and latest attempts. | Not implemented |
 | FR10 | Additional exam skills | P2 | Add assessment coverage for listening, writing, and speaking alongside reading to cover all four Goethe exam skills. | Not implemented |
 | FR11 | Rule-based deterministic scoring | P0 | Fixed answer keys and scoring rules produce repeatable results. | Implemented |
 | FR12 | Skill-specific readiness thresholds | P0 | Define and apply approved per-skill thresholds in addition to the overall band. | Partially implemented; numeric thresholds require product confirmation |
 | FR13 | Tagged question bank | P0 | Each question has a skill and topic tag usable by the scoring and recommendation rules. | Implemented |
-| FR14 | Randomized question selection | P0 | Select questions from the bank while preserving the required skill balance. | Not implemented; questions are fixed and ordered |
-| FR15 | Avoid unnecessary question repetition | P0 | Avoid presenting recently completed questions again when other eligible questions are available. | Not implemented |
-| FR16 | Equivalent difficulty between attempts | P0 | Retakes use equivalent question counts, skills, and difficulty. | Not implemented; the same set is reused |
+| FR14 | Randomized question selection | P0 | Select questions from the bank while preserving the required skill balance. | Partially implemented; alternates between two fixed forms, with no question shuffling |
+| FR15 | Avoid unnecessary question repetition | P0 | Avoid presenting recently completed questions again when other eligible questions are available. | Partially implemented; alternate form avoids the previous form on retake until page reload |
+| FR16 | Equivalent difficulty between attempts | P0 | Retakes use equivalent question counts, skills, and difficulty. | Partially implemented; forms share the same blueprint and counts, but difficulty is not empirically calibrated |
 | FR17 | Store attempt history | P1 | Persist attempts so learners can revisit previous results. | Not implemented |
 | FR18 | Compare attempts | P1 | Show changes in overall and per-skill performance across saved attempts. | Not implemented |
 | FR19 | AI-powered answer explanations | P2 | Optionally generate explanations with AI; this must not alter deterministic scoring. | Not implemented; current explanations are authored and deterministic |
@@ -257,20 +262,20 @@ Persistent progress tracking requires a future product and privacy decision, inc
 | Learner interprets the score as a pass guarantee. | Use the preliminary knowledge-readiness wording and display the assessment limitations on results. |
 | Three skills give an incomplete view of exam readiness. | Mark listening, writing, and speaking as not assessed and recommend full mock practice. |
 | A small question sample overstates or understates ability. | Show skill-level counts and describe the result as an informal snapshot. |
-| Reusing a fixed question set makes retakes predictable. | Track randomized selection, repeat avoidance, and equivalent difficulty as P0 follow-up work. |
+| Two forms may still be predictable or differ in difficulty. | Alternate forms on retake; keep the skill/topic blueprint aligned; calibrate difficulty and consider randomized selection as follow-up work. |
 | Thresholds or recommendations feel arbitrary. | Keep cutoffs explicit, deterministic, documented, and clearly non-official; confirm skill-specific thresholds before implementing them. |
 
 ## 15. Assumptions and open decisions
 
 - Overall readiness bands are proposed product guidance and not validated exam cut scores.
 - **Open:** Approve the numerical skill-specific readiness thresholds required by FR12.
-- **Open:** Define the minimum question-bank size and selection rules needed to implement randomization and reduce repeats.
-- **Open:** Define how equivalent difficulty will be measured across question sets.
+- **Open:** Decide whether two fixed alternating forms are sufficient for the MVP or whether questions should also be shuffled.
+- **Open:** Define how equivalent difficulty will be measured and validated across forms.
 - **Open:** Decide whether attempt history will remain device-local or require accounts and server storage.
 - **Open:** Determine whether and how to add writing to the assessment before describing it as a four-skill mock examination.
 
 ## 16. Current MVP implementation note
 
-The published MVP is a static, client-side application. It contains 15 German questions, deterministic answer checking, rounded overall and skill scores, four overall readiness bands, authored answer explanations, and up to three deterministic practice recommendations. It requires no account or backend.
+The published MVP is a static, client-side application. It contains two alternating German 15-question forms (five questions per skill in each form), deterministic answer checking, rounded overall and skill scores, four overall readiness bands, authored answer explanations, and up to three deterministic practice recommendations. Form alternation lasts for the page session; refreshing starts with Set 1. It requires no account or backend.
 
-Randomized question selection, repeat avoidance, equivalent-difficulty question sets, numerical per-skill readiness thresholds, saved attempt history, and attempt comparisons remain outstanding. See the MVP status column in §11 before treating a requirement as delivered.
+Question shuffling, empirical difficulty calibration, numerical per-skill readiness thresholds, saved attempt history, and attempt comparisons remain outstanding. See the MVP status column in §11 before treating a requirement as delivered.
