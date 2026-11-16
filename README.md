@@ -4,6 +4,8 @@ A lightweight, mobile-friendly self-check for learners who have completed A1 tra
 
 The quiz and results are presented in German. Results include all correct answers, the learner's selected answers, short explanations, and personalized next steps based on missed topics.
 
+See [PRD.md](./PRD.md) for the product goals, assessment and scoring rules, functional requirements, and outstanding MVP gaps.
+
 ## Run locally
 
 Open `index.html` in a browser, or serve this folder with any static file server. For example, with Node.js:
